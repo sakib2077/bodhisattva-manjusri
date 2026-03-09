@@ -38,7 +38,7 @@
     <div class="card">
 
       <div class="head">
-        <h1 class="title">BODHISATTVA MANJUSRI</h1>
+        <h1 class="title" id="title">BODHISATTVA MANJUSRI</h1>
         <div class="tabs" role="tablist" aria-label="Language">
           <button class="tab" id="tab-en" role="tab" aria-selected="true" aria-controls="panel-en">English</button>
           <button class="tab" id="tab-hi" role="tab" aria-selected="false" aria-controls="panel-hi">हिन्दी</button>
@@ -56,7 +56,7 @@
         <section id="panel-en" class="lang active" role="tabpanel" aria-labelledby="tab-en">
           <div class="hr"></div>
           <p>
-           BODHISATTVA MANJUSRI Bodhisattva Manjusri is seated in Lalitasana beautifully depicted with jeweled ear rings, necklace, arm lets, girdle and a conical head-dress. Dhyani Buddha Akshobhya is shown in earth touching attitude (Bhumisparsamudra). Left side female figure is intact whereas right side figure is damaged. The sculpture datable to Early Medieval Period, 10th - 11th century C.E. 
+          Bodhisattva Manjusri is seated in Lalitasana beautifully depicted with jeweled ear rings, necklace, arm lets, girdle and a conical head-dress. Dhyani Buddha Akshobhya is shown in earth touching attitude (Bhumisparsamudra). Left side female figure is intact whereas right side figure is damaged. The sculpture datable to Early Medieval Period, 10th - 11th century C.E. 
           </p>
            <audio controls>
           <source src="Bodhisatva manji shri english.mp3" type="audio/mpeg">
@@ -86,13 +86,16 @@
   const hiTab = document.getElementById('tab-hi');
   const enPanel = document.getElementById('panel-en');
   const hiPanel = document.getElementById('panel-hi');
-
+  const title = document.getElementById('title');
   function select(lang){
     const isEn = lang === 'en';
     enTab.setAttribute('aria-selected', isEn);
     hiTab.setAttribute('aria-selected', !isEn);
     enPanel.classList.toggle('active', isEn);
     hiPanel.classList.toggle('active', !isEn);
+    title.textContent = isEn 
+  ? "BODHISATTVA MANJUSRI" 
+  : "बोधिसत्त्व मंजुश्री";
     localStorage.setItem('lang', lang);
   }
 
@@ -106,3 +109,4 @@
 </script>
 </body>
 </html>
+
